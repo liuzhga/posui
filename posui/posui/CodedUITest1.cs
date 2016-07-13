@@ -24,12 +24,21 @@ namespace posui
         }
 
         [TestMethod]
-        public void CodedUITestMethod1()
+        public void CodedUITest()
         {
             // 若要为此测试生成代码，请从快捷菜单中选择“为编码的 UI 测试生成代码”，然后选择菜单项之一。
             this.UIMap.login();
-
+            this.UIMap.OnDuty();
         }
+
+        //[TestMethod] 
+        ////方法前添加该标志，重新生成解决方案，在左侧会显示标志下的测试名称。每个测试是独立的，如要执行当班，则需要执行登录
+        //public void OnDutytest()
+        //{
+        //    // 若要为此测试生成代码，请从快捷菜单中选择“为编码的 UI 测试生成代码”，然后选择菜单项之一。
+        //    //this.UIMap.login(); 
+        //    this.UIMap.OnDuty();
+        //}
 
         #region 附加测试特性
 
@@ -83,4 +92,6 @@ namespace posui
 
         private UIMap map;
     }
+
+    
 }

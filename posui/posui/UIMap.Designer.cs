@@ -53,12 +53,54 @@ namespace posui
                 return this.mUI收银员登录Window;
             }
         }
+        
+        public UI当班Window1 UI当班Window1
+        {
+            get
+            {
+                if ((this.mUI当班Window1 == null))
+                {
+                    this.mUI当班Window1 = new UI当班Window1();
+                }
+                return this.mUI当班Window1;
+            }
+        }
+        
+        public UI确定当班提示信息Window UI确定当班提示信息Window
+        {
+            get
+            {
+                if ((this.mUI确定当班提示信息Window == null))
+                {
+                    this.mUI确定当班提示信息Window = new UI确定当班提示信息Window();
+                }
+                return this.mUI确定当班提示信息Window;
+            }
+        }
+        
+        public UI畅捷通T零售POS软件Window UI畅捷通T零售POS软件Window
+        {
+            get
+            {
+                if ((this.mUI畅捷通T零售POS软件Window == null))
+                {
+                    this.mUI畅捷通T零售POS软件Window = new UI畅捷通T零售POS软件Window();
+                }
+                return this.mUI畅捷通T零售POS软件Window;
+            }
+        }
         #endregion
         
         #region Fields
         private UI主菜单选择Window mUI主菜单选择Window;
         
         private UI收银员登录Window mUI收银员登录Window;
+        
+        private UI当班Window1 mUI当班Window1;
+        
+        private UI确定当班提示信息Window mUI确定当班提示信息Window;
+        
+        private UI畅捷通T零售POS软件Window mUI畅捷通T零售POS软件Window;
         #endregion
     }
     
@@ -123,10 +165,200 @@ namespace posui
                 return this.m前台收银;
             }
         }
+        
+        public WinEdit 当班
+        {
+            get
+            {
+                if ((this.m当班 == null))
+                {
+                    this.m当班 = new WinEdit(this);
+                    #region 搜索条件
+                    this.m当班.SearchProperties[WinEdit.PropertyNames.Name] = "b";
+                    this.m当班.SearchProperties[WinEdit.PropertyNames.Instance] = "2";
+                    this.m当班.WindowTitles.Add("主菜单选择");
+                    #endregion
+                }
+                return this.m当班;
+            }
+        }
+        
+        public WinEdit 交班
+        {
+            get
+            {
+                if ((this.m交班 == null))
+                {
+                    this.m交班 = new WinEdit(this);
+                    #region 搜索条件
+                    this.m交班.SearchProperties[WinEdit.PropertyNames.Name] = "b";
+                    this.m交班.SearchProperties[WinEdit.PropertyNames.Instance] = "3";
+                    this.m交班.WindowTitles.Add("主菜单选择");
+                    #endregion
+                }
+                return this.m交班;
+            }
+        }
+        
+        public WinEdit 练习收银
+        {
+            get
+            {
+                if ((this.m练习收银 == null))
+                {
+                    this.m练习收银 = new WinEdit(this);
+                    #region 搜索条件
+                    this.m练习收银.SearchProperties[WinEdit.PropertyNames.Name] = "b";
+                    this.m练习收银.SearchProperties[WinEdit.PropertyNames.Instance] = "4";
+                    this.m练习收银.WindowTitles.Add("主菜单选择");
+                    #endregion
+                }
+                return this.m练习收银;
+            }
+        }
+        
+        public WinEdit 参数设置
+        {
+            get
+            {
+                if ((this.m参数设置 == null))
+                {
+                    this.m参数设置 = new WinEdit(this);
+                    #region 搜索条件
+                    this.m参数设置.SearchProperties[WinEdit.PropertyNames.Name] = "b";
+                    this.m参数设置.SearchProperties[WinEdit.PropertyNames.Instance] = "5";
+                    this.m参数设置.WindowTitles.Add("主菜单选择");
+                    #endregion
+                }
+                return this.m参数设置;
+            }
+        }
+        
+        public WinEdit 日结
+        {
+            get
+            {
+                if ((this.m日结 == null))
+                {
+                    this.m日结 = new WinEdit(this);
+                    #region 搜索条件
+                    this.m日结.SearchProperties[WinEdit.PropertyNames.Name] = "b";
+                    this.m日结.SearchProperties[WinEdit.PropertyNames.Instance] = "6";
+                    this.m日结.WindowTitles.Add("主菜单选择");
+                    #endregion
+                }
+                return this.m日结;
+            }
+        }
+        
+        public WinEdit 明细查询
+        {
+            get
+            {
+                if ((this.m明细查询 == null))
+                {
+                    this.m明细查询 = new WinEdit(this);
+                    #region 搜索条件
+                    this.m明细查询.SearchProperties[WinEdit.PropertyNames.Name] = "b";
+                    this.m明细查询.SearchProperties[WinEdit.PropertyNames.Instance] = "7";
+                    this.m明细查询.WindowTitles.Add("主菜单选择");
+                    #endregion
+                }
+                return this.m明细查询;
+            }
+        }
+        
+        public WinEdit 数据同步
+        {
+            get
+            {
+                if ((this.m数据同步 == null))
+                {
+                    this.m数据同步 = new WinEdit(this);
+                    #region 搜索条件
+                    this.m数据同步.SearchProperties[WinEdit.PropertyNames.Name] = "b";
+                    this.m数据同步.SearchProperties[WinEdit.PropertyNames.Instance] = "8";
+                    this.m数据同步.WindowTitles.Add("主菜单选择");
+                    #endregion
+                }
+                return this.m数据同步;
+            }
+        }
+        
+        public WinEdit 修改密码
+        {
+            get
+            {
+                if ((this.m修改密码 == null))
+                {
+                    this.m修改密码 = new WinEdit(this);
+                    #region 搜索条件
+                    this.m修改密码.SearchProperties[WinEdit.PropertyNames.Name] = "b";
+                    this.m修改密码.SearchProperties[WinEdit.PropertyNames.Instance] = "9";
+                    this.m修改密码.WindowTitles.Add("主菜单选择");
+                    #endregion
+                }
+                return this.m修改密码;
+            }
+        }
+        
+        public WinEdit 重新登录
+        {
+            get
+            {
+                if ((this.m重新登录 == null))
+                {
+                    this.m重新登录 = new WinEdit(this);
+                    #region 搜索条件
+                    this.m重新登录.SearchProperties[WinEdit.PropertyNames.Name] = "b";
+                    this.m重新登录.SearchProperties[WinEdit.PropertyNames.Instance] = "10";
+                    this.m重新登录.WindowTitles.Add("主菜单选择");
+                    #endregion
+                }
+                return this.m重新登录;
+            }
+        }
+        
+        public WinEdit 退出系统
+        {
+            get
+            {
+                if ((this.m退出系统 == null))
+                {
+                    this.m退出系统 = new WinEdit(this);
+                    #region 搜索条件
+                    this.m退出系统.SearchProperties[WinEdit.PropertyNames.Name] = "b";
+                    this.m退出系统.SearchProperties[WinEdit.PropertyNames.Instance] = "11";
+                    this.m退出系统.WindowTitles.Add("主菜单选择");
+                    #endregion
+                }
+                return this.m退出系统;
+            }
+        }
         #endregion
         
         #region Fields
         private WinEdit m前台收银;
+        
+        private WinEdit m当班;
+        
+        private WinEdit m交班;
+        
+        private WinEdit m练习收银;
+        
+        private WinEdit m参数设置;
+        
+        private WinEdit m日结;
+        
+        private WinEdit m明细查询;
+        
+        private WinEdit m数据同步;
+        
+        private WinEdit m修改密码;
+        
+        private WinEdit m重新登录;
+        
+        private WinEdit m退出系统;
         #endregion
     }
     
@@ -144,43 +376,43 @@ namespace posui
         }
         
         #region Properties
-        public UIItemWindow UIItemWindow
+        public UI收银员子Window UI收银员子Window
         {
             get
             {
-                if ((this.mUIItemWindow == null))
+                if ((this.mUI收银员子Window == null))
                 {
-                    this.mUIItemWindow = new UIItemWindow(this);
+                    this.mUI收银员子Window = new UI收银员子Window(this);
                 }
-                return this.mUIItemWindow;
+                return this.mUI收银员子Window;
             }
         }
         
-        public UIItemWindow1 UIItemWindow1
+        public UI收银员登录子Window1 UI收银员登录子Window1
         {
             get
             {
-                if ((this.mUIItemWindow1 == null))
+                if ((this.mUI收银员登录子Window1 == null))
                 {
-                    this.mUIItemWindow1 = new UIItemWindow1(this);
+                    this.mUI收银员登录子Window1 = new UI收银员登录子Window1(this);
                 }
-                return this.mUIItemWindow1;
+                return this.mUI收银员登录子Window1;
             }
         }
         #endregion
         
         #region Fields
-        private UIItemWindow mUIItemWindow;
+        private UI收银员子Window mUI收银员子Window;
         
-        private UIItemWindow1 mUIItemWindow1;
+        private UI收银员登录子Window1 mUI收银员登录子Window1;
         #endregion
     }
     
     [GeneratedCode("编码的 UI 测试生成器", "14.0.23107.0")]
-    public class UIItemWindow : WinWindow
+    public class UI收银员子Window : WinWindow
     {
         
-        public UIItemWindow(UITestControl searchLimitContainer) : 
+        public UI收银员子Window(UITestControl searchLimitContainer) : 
                 base(searchLimitContainer)
         {
             #region 搜索条件
@@ -204,20 +436,18 @@ namespace posui
                 return this.m收银员编码;
             }
         }
-
         #endregion
-
+        
         #region Fields
         private WinEdit m收银员编码;
-
         #endregion
     }
     
     [GeneratedCode("编码的 UI 测试生成器", "14.0.23107.0")]
-    public class UIItemWindow1 : WinWindow
+    public class UI收银员登录子Window1 : WinWindow
     {
         
-        public UIItemWindow1(UITestControl searchLimitContainer) : 
+        public UI收银员登录子Window1(UITestControl searchLimitContainer) : 
                 base(searchLimitContainer)
         {
             #region 搜索条件
@@ -245,6 +475,195 @@ namespace posui
         
         #region Fields
         private WinEdit m收银员密码;
+        #endregion
+    }
+    
+    [GeneratedCode("编码的 UI 测试生成器", "14.0.23107.0")]
+    public class UI当班Window1 : WinWindow
+    {
+        
+        public UI当班Window1()
+        {
+            #region 搜索条件
+            this.SearchProperties[WinWindow.PropertyNames.Name] = "当班";
+            this.SearchProperties[WinWindow.PropertyNames.ClassName] = "FNWNS3125";
+            this.WindowTitles.Add("当班");
+            #endregion
+        }
+        
+        #region Properties
+        public UI当班子Window UI当班子Window
+        {
+            get
+            {
+                if ((this.mUI当班子Window == null))
+                {
+                    this.mUI当班子Window = new UI当班子Window(this);
+                }
+                return this.mUI当班子Window;
+            }
+        }
+        
+        public UI标题Window UI标题Window
+        {
+            get
+            {
+                if ((this.mUI标题Window == null))
+                {
+                    this.mUI标题Window = new UI标题Window(this);
+                }
+                return this.mUI标题Window;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UI当班子Window mUI当班子Window;
+        
+        private UI标题Window mUI标题Window;
+        #endregion
+    }
+    
+    [GeneratedCode("编码的 UI 测试生成器", "14.0.23107.0")]
+    public class UI当班子Window : WinWindow
+    {
+        
+        public UI当班子Window(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region 搜索条件
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "1005";
+            this.WindowTitles.Add("当班");
+            #endregion
+        }
+        
+        #region Properties
+        public WinComboBox UI班次选择控件
+        {
+            get
+            {
+                if ((this.mUI班次选择控件 == null))
+                {
+                    this.mUI班次选择控件 = new WinComboBox(this);
+                    #region 搜索条件
+                    this.mUI班次选择控件.WindowTitles.Add("当班");
+                    #endregion
+                }
+                return this.mUI班次选择控件;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinComboBox mUI班次选择控件;
+        #endregion
+    }
+    
+    [GeneratedCode("编码的 UI 测试生成器", "14.0.23107.0")]
+    public class UI标题Window : WinWindow
+    {
+        
+        public UI标题Window(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region 搜索条件
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "1000";
+            this.WindowTitles.Add("当班");
+            #endregion
+        }
+        
+        #region Properties
+        public WinText UI标题Text
+        {
+            get
+            {
+                if ((this.mUI标题Text == null))
+                {
+                    this.mUI标题Text = new WinText(this);
+                    #region 搜索条件
+                    this.mUI标题Text.SearchProperties[WinText.PropertyNames.Name] = "当班";
+                    this.mUI标题Text.WindowTitles.Add("当班");
+                    #endregion
+                }
+                return this.mUI标题Text;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinText mUI标题Text;
+        #endregion
+    }
+    
+    [GeneratedCode("编码的 UI 测试生成器", "14.0.23107.0")]
+    public class UI确定当班提示信息Window : WinWindow
+    {
+        
+        public UI确定当班提示信息Window()
+        {
+            #region 搜索条件
+            this.SearchProperties[WinWindow.PropertyNames.Name] = "提示信息";
+            this.SearchProperties[WinWindow.PropertyNames.ClassName] = "FNWNS3125";
+            this.WindowTitles.Add("提示信息");
+            #endregion
+        }
+        
+        #region Properties
+        public WinClient UI确定当班提示信息Client
+        {
+            get
+            {
+                if ((this.mUI确定当班提示信息Client == null))
+                {
+                    this.mUI确定当班提示信息Client = new WinClient(this);
+                    #region 搜索条件
+                    this.mUI确定当班提示信息Client.SearchProperties[WinControl.PropertyNames.Name] = "提示信息";
+                    this.mUI确定当班提示信息Client.WindowTitles.Add("提示信息");
+                    #endregion
+                }
+                return this.mUI确定当班提示信息Client;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinClient mUI确定当班提示信息Client;
+        #endregion
+    }
+    
+    [GeneratedCode("编码的 UI 测试生成器", "14.0.23107.0")]
+    public class UI畅捷通T零售POS软件Window : WinWindow
+    {
+        
+        public UI畅捷通T零售POS软件Window()
+        {
+            #region 搜索条件
+            this.SearchProperties[WinWindow.PropertyNames.Name] = "畅捷通T+零售POS软件";
+            this.SearchProperties[WinWindow.PropertyNames.ClassName] = "FNWNS3125";
+            this.WindowTitles.Add("畅捷通T+零售POS软件");
+            #endregion
+        }
+        
+        #region Properties
+        public WinClient UI畅捷通T零售POS软件Client
+        {
+            get
+            {
+                if ((this.mUI畅捷通T零售POS软件Client == null))
+                {
+                    this.mUI畅捷通T零售POS软件Client = new WinClient(this);
+                    #region 搜索条件
+                    this.mUI畅捷通T零售POS软件Client.SearchProperties[WinControl.PropertyNames.Name] = "畅捷通T+零售POS软件";
+                    this.mUI畅捷通T零售POS软件Client.WindowTitles.Add("畅捷通T+零售POS软件");
+                    #endregion
+                }
+                return this.mUI畅捷通T零售POS软件Client;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinClient mUI畅捷通T零售POS软件Client;
         #endregion
     }
 }

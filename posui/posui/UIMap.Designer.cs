@@ -204,10 +204,12 @@ namespace posui
                 return this.m收银员编码;
             }
         }
+
         #endregion
-        
+
         #region Fields
         private WinEdit m收银员编码;
+
         #endregion
     }
     

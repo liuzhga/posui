@@ -24,11 +24,21 @@ namespace posui
         }
 
         [TestMethod]
-        public void CodedUITest()
+        public void InitializePos()
         {
             // 若要为此测试生成代码，请从快捷菜单中选择“为编码的 UI 测试生成代码”，然后选择菜单项之一。
-            this.UIMap.login();
-            this.UIMap.OnDuty();
+
+            this.UIMap.Firstlogin();
+
+        }
+        [TestMethod]
+        public void PosCashier()
+        {
+            // 若要为此测试生成代码，请从快捷菜单中选择“为编码的 UI 测试生成代码”，然后选择菜单项之一。
+            this.UIMap.Login();
+            this.UIMap.OnDuty(0);
+           // this.UIMap.SelectCashier();
+            
         }
 
         //[TestMethod] 
@@ -36,7 +46,7 @@ namespace posui
         //public void OnDutytest()
         //{
         //    // 若要为此测试生成代码，请从快捷菜单中选择“为编码的 UI 测试生成代码”，然后选择菜单项之一。
-        //    //this.UIMap.login(); 
+        //    //this.UIMap.Login(); 
         //    this.UIMap.OnDuty();
         //}
 

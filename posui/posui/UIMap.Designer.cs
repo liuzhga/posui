@@ -89,6 +89,30 @@ namespace posui
                 return this.mUI畅捷通T零售POS软件Window;
             }
         }
+        
+        public UI服务器连接设置Window UI服务器连接设置Window
+        {
+            get
+            {
+                if ((this.mUI服务器连接设置Window == null))
+                {
+                    this.mUI服务器连接设置Window = new UI服务器连接设置Window();
+                }
+                return this.mUI服务器连接设置Window;
+            }
+        }
+        
+        public UI选择账套Window UI选择账套Window
+        {
+            get
+            {
+                if ((this.mUI选择账套Window == null))
+                {
+                    this.mUI选择账套Window = new UI选择账套Window();
+                }
+                return this.mUI选择账套Window;
+            }
+        }
         #endregion
         
         #region Fields
@@ -101,6 +125,10 @@ namespace posui
         private UI确定当班提示信息Window mUI确定当班提示信息Window;
         
         private UI畅捷通T零售POS软件Window mUI畅捷通T零售POS软件Window;
+        
+        private UI服务器连接设置Window mUI服务器连接设置Window;
+        
+        private UI选择账套Window mUI选择账套Window;
         #endregion
     }
     
@@ -515,12 +543,26 @@ namespace posui
                 return this.mUI标题Window;
             }
         }
+        
+        public UIItemWindow UIItemWindow
+        {
+            get
+            {
+                if ((this.mUIItemWindow == null))
+                {
+                    this.mUIItemWindow = new UIItemWindow(this);
+                }
+                return this.mUIItemWindow;
+            }
+        }
         #endregion
         
         #region Fields
         private UI当班子Window mUI当班子Window;
         
         private UI标题Window mUI标题Window;
+        
+        private UIItemWindow mUIItemWindow;
         #endregion
     }
     
@@ -596,6 +638,41 @@ namespace posui
     }
     
     [GeneratedCode("编码的 UI 测试生成器", "14.0.23107.0")]
+    public class UIItemWindow : WinWindow
+    {
+        
+        public UIItemWindow(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region 搜索条件
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "1004";
+            this.WindowTitles.Add("当班");
+            #endregion
+        }
+        
+        #region Properties
+        public WinEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WinEdit(this);
+                    #region 搜索条件
+                    this.mUIItemEdit.WindowTitles.Add("当班");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("编码的 UI 测试生成器", "14.0.23107.0")]
     public class UI确定当班提示信息Window : WinWindow
     {
         
@@ -624,10 +701,60 @@ namespace posui
                 return this.mUI确定当班提示信息Client;
             }
         }
+        
+        public UIItemWindow1 UIItemWindow
+        {
+            get
+            {
+                if ((this.mUIItemWindow == null))
+                {
+                    this.mUIItemWindow = new UIItemWindow1(this);
+                }
+                return this.mUIItemWindow;
+            }
+        }
         #endregion
         
         #region Fields
         private WinClient mUI确定当班提示信息Client;
+        
+        private UIItemWindow1 mUIItemWindow;
+        #endregion
+    }
+    
+    [GeneratedCode("编码的 UI 测试生成器", "14.0.23107.0")]
+    public class UIItemWindow1 : WinWindow
+    {
+        
+        public UIItemWindow1(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region 搜索条件
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "1002";
+            this.WindowTitles.Add("提示信息");
+            #endregion
+        }
+        
+        #region Properties
+        public WinText UI是否手工下载数据Text
+        {
+            get
+            {
+                if ((this.mUI是否手工下载数据Text == null))
+                {
+                    this.mUI是否手工下载数据Text = new WinText(this);
+                    #region 搜索条件
+                    this.mUI是否手工下载数据Text.SearchProperties[WinText.PropertyNames.Name] = "是否手工下载数据？";
+                    this.mUI是否手工下载数据Text.WindowTitles.Add("提示信息");
+                    #endregion
+                }
+                return this.mUI是否手工下载数据Text;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinText mUI是否手工下载数据Text;
         #endregion
     }
     
@@ -664,6 +791,385 @@ namespace posui
         
         #region Fields
         private WinClient mUI畅捷通T零售POS软件Client;
+        #endregion
+    }
+    
+    [GeneratedCode("编码的 UI 测试生成器", "14.0.23107.0")]
+    public class UI服务器连接设置Window : WinWindow
+    {
+        
+        public UI服务器连接设置Window()
+        {
+            #region 搜索条件
+            this.SearchProperties[WinWindow.PropertyNames.Name] = "服务器连接设置";
+            this.SearchProperties[WinWindow.PropertyNames.ClassName] = "FNWNS3125";
+            this.WindowTitles.Add("服务器连接设置");
+            #endregion
+        }
+        
+        #region Properties
+        public UIItemWindow2 UIItemWindow
+        {
+            get
+            {
+                if ((this.mUIItemWindow == null))
+                {
+                    this.mUIItemWindow = new UIItemWindow2(this);
+                }
+                return this.mUIItemWindow;
+            }
+        }
+        
+        public UIItemWindow11 UIItemWindow1
+        {
+            get
+            {
+                if ((this.mUIItemWindow1 == null))
+                {
+                    this.mUIItemWindow1 = new UIItemWindow11(this);
+                }
+                return this.mUIItemWindow1;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIItemWindow2 mUIItemWindow;
+        
+        private UIItemWindow11 mUIItemWindow1;
+        #endregion
+    }
+    
+    [GeneratedCode("编码的 UI 测试生成器", "14.0.23107.0")]
+    public class UIItemWindow2 : WinWindow
+    {
+        
+        public UIItemWindow2(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region 搜索条件
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "1004";
+            this.WindowTitles.Add("服务器连接设置");
+            #endregion
+        }
+        
+        #region Properties
+        public WinEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WinEdit(this);
+                    #region 搜索条件
+                    this.mUIItemEdit.WindowTitles.Add("服务器连接设置");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("编码的 UI 测试生成器", "14.0.23107.0")]
+    public class UIItemWindow11 : WinWindow
+    {
+        
+        public UIItemWindow11(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region 搜索条件
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "1005";
+            this.WindowTitles.Add("服务器连接设置");
+            #endregion
+        }
+        
+        #region Properties
+        public WinEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WinEdit(this);
+                    #region 搜索条件
+                    this.mUIItemEdit.WindowTitles.Add("服务器连接设置");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("编码的 UI 测试生成器", "14.0.23107.0")]
+    public class UI选择账套Window : WinWindow
+    {
+        
+        public UI选择账套Window()
+        {
+            #region 搜索条件
+            this.SearchProperties[WinWindow.PropertyNames.Name] = "选择账套";
+            this.SearchProperties[WinWindow.PropertyNames.ClassName] = "FNWNS3125";
+            this.WindowTitles.Add("选择账套");
+            #endregion
+        }
+        
+        #region Properties
+        public UIItemWindow3 UIItemWindow
+        {
+            get
+            {
+                if ((this.mUIItemWindow == null))
+                {
+                    this.mUIItemWindow = new UIItemWindow3(this);
+                }
+                return this.mUIItemWindow;
+            }
+        }
+        
+        public UIItemWindow12 UIItemWindow1
+        {
+            get
+            {
+                if ((this.mUIItemWindow1 == null))
+                {
+                    this.mUIItemWindow1 = new UIItemWindow12(this);
+                }
+                return this.mUIItemWindow1;
+            }
+        }
+        
+        public UIItemWindow21 UIItemWindow2
+        {
+            get
+            {
+                if ((this.mUIItemWindow2 == null))
+                {
+                    this.mUIItemWindow2 = new UIItemWindow21(this);
+                }
+                return this.mUIItemWindow2;
+            }
+        }
+        
+        public UIItemWindow31 UIItemWindow3
+        {
+            get
+            {
+                if ((this.mUIItemWindow3 == null))
+                {
+                    this.mUIItemWindow3 = new UIItemWindow31(this);
+                }
+                return this.mUIItemWindow3;
+            }
+        }
+        
+        public UIItemWindow4 UIItemWindow4
+        {
+            get
+            {
+                if ((this.mUIItemWindow4 == null))
+                {
+                    this.mUIItemWindow4 = new UIItemWindow4(this);
+                }
+                return this.mUIItemWindow4;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIItemWindow3 mUIItemWindow;
+        
+        private UIItemWindow12 mUIItemWindow1;
+        
+        private UIItemWindow21 mUIItemWindow2;
+        
+        private UIItemWindow31 mUIItemWindow3;
+        
+        private UIItemWindow4 mUIItemWindow4;
+        #endregion
+    }
+    
+    [GeneratedCode("编码的 UI 测试生成器", "14.0.23107.0")]
+    public class UIItemWindow3 : WinWindow
+    {
+        
+        public UIItemWindow3(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region 搜索条件
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "1008";
+            this.WindowTitles.Add("选择账套");
+            #endregion
+        }
+        
+        #region Properties
+        public WinEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WinEdit(this);
+                    #region 搜索条件
+                    this.mUIItemEdit.WindowTitles.Add("选择账套");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("编码的 UI 测试生成器", "14.0.23107.0")]
+    public class UIItemWindow12 : WinWindow
+    {
+        
+        public UIItemWindow12(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region 搜索条件
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "1009";
+            this.WindowTitles.Add("选择账套");
+            #endregion
+        }
+        
+        #region Properties
+        public WinEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WinEdit(this);
+                    #region 搜索条件
+                    this.mUIItemEdit.WindowTitles.Add("选择账套");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("编码的 UI 测试生成器", "14.0.23107.0")]
+    public class UIItemWindow21 : WinWindow
+    {
+        
+        public UIItemWindow21(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region 搜索条件
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "1005";
+            this.WindowTitles.Add("选择账套");
+            #endregion
+        }
+        
+        #region Properties
+        public WinComboBox UIItemComboBox
+        {
+            get
+            {
+                if ((this.mUIItemComboBox == null))
+                {
+                    this.mUIItemComboBox = new WinComboBox(this);
+                    #region 搜索条件
+                    this.mUIItemComboBox.WindowTitles.Add("选择账套");
+                    #endregion
+                }
+                return this.mUIItemComboBox;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinComboBox mUIItemComboBox;
+        #endregion
+    }
+    
+    [GeneratedCode("编码的 UI 测试生成器", "14.0.23107.0")]
+    public class UIItemWindow31 : WinWindow
+    {
+        
+        public UIItemWindow31(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region 搜索条件
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "1006";
+            this.WindowTitles.Add("选择账套");
+            #endregion
+        }
+        
+        #region Properties
+        public WinComboBox UIItemComboBox
+        {
+            get
+            {
+                if ((this.mUIItemComboBox == null))
+                {
+                    this.mUIItemComboBox = new WinComboBox(this);
+                    #region 搜索条件
+                    this.mUIItemComboBox.WindowTitles.Add("选择账套");
+                    #endregion
+                }
+                return this.mUIItemComboBox;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinComboBox mUIItemComboBox;
+        #endregion
+    }
+    
+    [GeneratedCode("编码的 UI 测试生成器", "14.0.23107.0")]
+    public class UIItemWindow4 : WinWindow
+    {
+        
+        public UIItemWindow4(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region 搜索条件
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "1007";
+            this.WindowTitles.Add("选择账套");
+            #endregion
+        }
+        
+        #region Properties
+        public WinEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WinEdit(this);
+                    #region 搜索条件
+                    this.mUIItemEdit.WindowTitles.Add("选择账套");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinEdit mUIItemEdit;
         #endregion
     }
 }

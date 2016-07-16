@@ -42,8 +42,7 @@ namespace posui
             UIMap.MainMenoSelect(UIMap.loginParams.Cashier);
             UIMap.ExitCashier();
             //  this.UIMap.shift();
-            UIMap.MainMenoSelect(UIMap.loginParams.Logout);
-          
+            UIMap.PosLogout();
         }
 
         //[TestMethod] 

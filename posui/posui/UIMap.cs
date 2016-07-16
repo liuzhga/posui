@@ -17,7 +17,6 @@
 
     public partial class UIMap
     {
-
         public virtual loginParams loginParams
         {
             get
@@ -29,74 +28,63 @@
                 return this.mloginParams;
             }
         }
-
         private loginParams mloginParams;
 
-        /// <summary>
-        /// 登录
-        /// </summary>
-        public void Login()
+
+        public void ExitCashierMenoSelect(int oper)
         {
             #region Variable Declarations
 
-            WinEdit uIcodeEdit = this.UI收银员登录Window.UI收银员子Window.收银员编码;
-            WinEdit uIsecWinEdit = this.UI收银员登录Window.UI收银员登录子Window1.收银员密码;
-
             #endregion
-
-            // 启动“%ProgramFiles%\Chanjet\Pos\ufida_t_pos_app.exe”
-            ApplicationUnderTest ufida_t_pos_appApplication = ApplicationUnderTest.Launch(this.loginParams.ExePath,
-                this.loginParams.AlternateExePath);
-
-            // 在 文本框 中键入“1”
-            uIcodeEdit.Text = this.loginParams.SendOne;
-
-            // 在 文本框 中键入“{Enter}”
-            Keyboard.SendKeys(uIcodeEdit, this.loginParams.SendEnter, ModifierKeys.None);
-
-            // 在 文本框 中键入“{Enter}”
-            Keyboard.SendKeys(uIsecWinEdit, this.loginParams.SendEnter, ModifierKeys.None);
-        }
-
-        /// <summary>
-        /// 当班
-        /// </summary>
-
-        public void OnDuty(int first)
-        {
-            #region Variable Declarations
-            WinComboBox uI班次选择控件 = this.UI当班Window1.UI当班子Window.UI班次选择控件;
-            WinClient uI提示信息Client = this.UI确定当班提示信息Window.UI确定当班提示信息Client;
-            WinEdit uIItemEdit = this.UI当班Window1.UIItemWindow.UIItemEdit;
-
-            #endregion
-            //主菜单选择当班
-            MainMenoSelect(loginParams.Onduty);
-
-            // 在 组合框 中选择“晚班                                                                                                    1650”
-            uI班次选择控件.SelectedItem = this.loginParams.UIComboBoxSelectedNight;
-
-            // 在 组合框 中键入“{Enter}”
-            Keyboard.SendKeys(uI班次选择控件, this.loginParams.SendEnter, ModifierKeys.None);
-            if (first == 1)
+            switch (oper)
             {
-             // 在 备用金文本框 中键入“{Enter}”
-                 Keyboard.SendKeys(uIItemEdit, this.loginParams.SendEnter, ModifierKeys.None);
+                case 1:
+                    WinEdit exitcashiere = this.UI收银界面esc菜单选择Window.UINoneClient.退出收银;
+                    Keyboard.SendKeys(exitcashiere, this.loginParams.SendEnter, ModifierKeys.None);
+                    break;
+                case 2:
+                    WinEdit salesreturn = this.UI收银界面esc菜单选择Window.UINoneClient.退货;
+                    Keyboard.SendKeys(salesreturn, this.loginParams.SendEnter, ModifierKeys.None);
+                    break;
+                case 3:
+                    WinEdit retailGift = this.UI收银界面esc菜单选择Window.UINoneClient.整单赠送;
+                    Keyboard.SendKeys(retailGift, this.loginParams.SendEnter, ModifierKeys.None);
+                    break;
+                case 4:
+                    WinEdit retailRegister = this.UI收银界面esc菜单选择Window.UINoneClient.商品暂存;
+                    Keyboard.SendKeys(retailRegister, this.loginParams.SendEnter, ModifierKeys.None);
+                    break;
+                case 5:
+                    WinEdit registerPickup = this.UI收银界面esc菜单选择Window.UINoneClient.暂存取货;
+                    Keyboard.SendKeys(registerPickup, this.loginParams.SendEnter, ModifierKeys.None);
+                    break;
+                case 6:
+                    WinEdit registerQuery = this.UI收银界面esc菜单选择Window.UINoneClient.暂存查询;
+                    Keyboard.SendKeys(registerQuery, this.loginParams.SendEnter, ModifierKeys.None);
+                    break;
+                case 7:
+                    WinEdit checkAndPay = this.UI收银界面esc菜单选择Window.UINoneClient.对账交款;
+                    Keyboard.SendKeys(checkAndPay, this.loginParams.SendEnter, ModifierKeys.None);
+                    break;
+                case 8:
+                    WinEdit returnCashier = this.UI收银界面esc菜单选择Window.UINoneClient.返回;
+                    Keyboard.SendKeys(returnCashier, this.loginParams.SendEnter, ModifierKeys.None);
+                    break;
             }
-
-            // 在 “当班提示信息” 客户端 中键入“{Enter}”
-            Keyboard.SendKeys(uI提示信息Client, this.loginParams.SendEnter, ModifierKeys.None);
 
         }
 
         /// <summary>
         /// 主菜单选择函数
         /// </summary>
-        public void MainMenoSelect( int oper)
+        public void MainMenoSelect(int oper)
         {
             #region Variable Declarations
-
+            
             #endregion
+
+            // 在 “提示信息” 客户端 中键入“{Enter}”
+
             switch (oper)
             {
                 case 1:
@@ -132,7 +120,7 @@
                     Keyboard.SendKeys(datasync, this.loginParams.SendEnter, ModifierKeys.None);
                     break;
                 case 9:
-                    WinEdit passwordChange  = this.UI主菜单选择Window.主菜单选择.修改密码;
+                    WinEdit passwordChange = this.UI主菜单选择Window.主菜单选择.修改密码;
                     Keyboard.SendKeys(passwordChange, this.loginParams.SendEnter, ModifierKeys.None);
                     break;
                 case 10:
@@ -141,11 +129,68 @@
                     break;
                 case 11:
                     WinEdit logout = this.UI主菜单选择Window.主菜单选择.退出系统;
-                    Keyboard.SendKeys(logout, this.loginParams.SendEnter, ModifierKeys.None);
+                    Keyboard.SendKeys(logout, loginParams.SendZero, ModifierKeys.None);
+                    WinClient uI确定当班提示信息Client = this.UI提示信息Window.UI提示信息窗口有后续流程Client;
+                    Keyboard.SendKeys(uI确定当班提示信息Client, this.loginParams.SendEnter, ModifierKeys.None);
                     break;
             }
-            
+
         }
+        /// <summary>
+        /// 登录
+        /// </summary>
+        public void Login()
+        {
+            #region Variable Declarations
+
+            WinEdit uIcodeEdit = this.UI收银员登录Window.UI收银员子Window.收银员编码;
+            WinEdit uIsecWinEdit = this.UI收银员登录Window.UI收银员登录子Window1.收银员密码;
+
+            #endregion
+
+            // 启动“%ProgramFiles%\Chanjet\Pos\ufida_t_pos_app.exe”
+            ApplicationUnderTest ufida_t_pos_appApplication = ApplicationUnderTest.Launch(this.loginParams.ExePath,
+                this.loginParams.AlternateExePath);
+
+            // 在 文本框 中键入“1”
+            uIcodeEdit.Text = this.loginParams.SendOne;
+
+            // 在 文本框 中键入“{Enter}”
+            Keyboard.SendKeys(uIcodeEdit, this.loginParams.SendEnter, ModifierKeys.None);
+
+            // 在 文本框 中键入“{Enter}”
+            Keyboard.SendKeys(uIsecWinEdit, this.loginParams.SendEnter, ModifierKeys.None);
+        }
+
+        /// <summary>
+        /// 当班
+        /// </summary>
+
+        public void OnDuty()
+        {
+            #region Variable Declarations
+            WinComboBox uI班次选择控件 = this.UI当班Window1.UI当班子Window.UI班次选择控件;
+            WinClient uI提示信息Client = this.UI提示信息Window.UI提示信息窗口有后续流程Client;
+            WinEdit uIItemEdit = this.UI当班Window1.UIItemWindow.UIItemEdit;
+
+            #endregion
+            //主菜单选择当班
+            MainMenoSelect(loginParams.Onduty);
+
+            // 在 组合框 中选择“晚班                                                                                                    1650”
+            uI班次选择控件.SelectedItem = this.loginParams.UIComboBoxSelectedNight;
+
+            // 在 组合框 中键入“{Enter}”
+            Keyboard.SendKeys(uI班次选择控件, this.loginParams.SendEnter, ModifierKeys.None);
+            // 在 备用金文本框 中键入“{Enter}”
+            Keyboard.SendKeys(uIItemEdit, this.loginParams.SendEnter, ModifierKeys.None);
+
+            // 在 “当班提示信息” 客户端 中键入“{Enter}”
+            Keyboard.SendKeys(uI提示信息Client, this.loginParams.SendEnter, ModifierKeys.None);
+
+        }
+
+
 
         /// <summary>
         /// chushihua - 使用“chushihuaParams”将参数传递到此方法中。
@@ -161,8 +206,8 @@
             WinComboBox uIItemComboBox = this.UI选择账套Window.UIItemWindow2.UIItemComboBox;
             WinComboBox uIItemComboBox1 = this.UI选择账套Window.UIItemWindow3.UIItemComboBox;
             WinEdit uIItemEdit4 = this.UI选择账套Window.UIItemWindow4.UIItemEdit;
-            WinText uI是否手工下载数据Text = this.UI确定当班提示信息Window.UIItemWindow.UI是否手工下载数据Text;
-            WinClient uI确定当班提示信息Client = this.UI确定当班提示信息Window.UI确定当班提示信息Client;
+            WinText uI是否手工下载数据Text = this.UI提示信息Window.UIItemWindow.UI是否手工下载数据Text;
+            WinClient uI确定当班提示信息Client = this.UI提示信息Window.UI提示信息窗口有后续流程Client;
             #endregion
 
             // 启动“%ProgramFiles%\Chanjet\Pos\ufida_t_pos_app.exe”
@@ -210,39 +255,50 @@
             Keyboard.SendKeys(uI确定当班提示信息Client, this.loginParams.SendF3, ModifierKeys.None);
         }
 
+        /// <summary>
+        /// shift - 使用“shiftParams”将参数传递到此方法中。
+        /// </summary>
+        public void shift()
+        {
+            #region Variable Declarations
+            WinEdit uIItemEdit = this.UI交班Window.UIItemWindow.UIItemEdit;
+            WinClient uI确定当班提示信息Client = this.UI提示信息Window.UI提示信息窗口有后续流程Client;
+            #endregion
 
-       
+            // 选择交班菜单。
+            MainMenoSelect(loginParams.Shift);
+            // 在 文本框 中键入“{F2}”
+            Keyboard.SendKeys(uIItemEdit, this.loginParams.SendF2, ModifierKeys.None);
+
+            // 在 “提示信息” 客户端 中键入“{F2}”
+            Keyboard.SendKeys(uI确定当班提示信息Client, this.loginParams.SendF3, ModifierKeys.None);
+        }
+
+
+        /// <summary>
+        /// 在收银界面退出
+        /// </summary>
+        public void ExitCashier()
+        {
+            #region Variable Declarations
+            WinEdit uIItemEdit = this.UI畅捷通T零售POS软件Window.UIItem1234567890123Window.UIItemEdit;
+            #endregion
+
+            // 在 文本框 中键入“{Escape}”
+            Keyboard.SendKeys(uIItemEdit, this.loginParams.SendEsc, ModifierKeys.None);
+            ExitCashierMenoSelect(loginParams.Exitcashier);
+        }
 
     }
     /// <summary>
-    /// 要传递到“Login”中的参数
+    /// 参数表
     /// </summary>
     [GeneratedCode("编码的 UI 测试生成器", "14.0.23107.0")]
     public class loginParams
     {
-
         #region Fields
-
-        /// <summary>
-        /// 启动“%ProgramFiles%\Chanjet\Pos\ufida_t_pos_app.exe”
-        /// </summary>
         public string ExePath = "C:\\Program Files (x86)\\Chanjet\\Pos\\ufida_t_pos_app.exe";
-
-        /// <summary>
-        /// 启动“%ProgramFiles%\Chanjet\Pos\ufida_t_pos_app.exe”
-        /// </summary>
         public string AlternateExePath = "%ProgramFiles%\\Chanjet\\Pos\\ufida_t_pos_app.exe";
-
-        /// <summary>
-        /// 在 文本框 中键入“1”
-        /// </summary>
-        public string SendOne = "1";
-
-        /// <summary>
-        /// 在 文本框 中键入“{Enter}”
-        /// </summary>
-        public string SendEnter = "{Enter}";
-
 
         public string UIComboBoxSelectedMorning = "早班                                                                               " +
     "                     1648";
@@ -252,42 +308,40 @@
         public string UIComboBoxSelectedNight = "晚班                                                                               " +
     "                     1650";
 
-        /// <summary>
-        /// 在 文本框 中键入“http://127.0.0.1:8080/tplus”
-        /// </summary>
         public string ServerAddress = "http://127.0.0.1:8080/tplus";
-
-        /// <summary>
-        /// 在 文本框 中键入“{Tab}”
-        /// </summary>
-        public string SendTab = "{Tab}";
-
-        /// <summary>
-        /// 在 文本框 中键入“8080”
-        /// </summary>
         public string ServerPort = "8080";
-
-        /// <summary>
-        /// 在 文本框 中键入“a010001”
-        /// </summary>
         public string PosCode = "a010001";
 
-        /// <summary>
-        /// 在 “提示信息” 客户端 中键入“{F3}”
-        /// </summary>
+        public string SendOne = "1";
+        public string SendZero = "0";
+        public string SendEnter = "{Enter}";
+        public string SendTab = "{Tab}";
+        public string SendEsc = "{Escape}";
         public string SendF3 = "{F3}";
+        public string SendF2 = "{F2}";
 
-        public int Cashiere = 1;
+
+        public int Cashier = 1;
         public int Onduty = 2;
         public int Shift = 3;
         public int CashierPractice = 4;
         public int ParameterSet = 5;
         public int Daily = 6;
-        public int DetailedQuery  = 7;
+        public int DetailedQuery = 7;
         public int Datasync = 8;
         public int PasswordChange = 9;
         public int Relogin = 10;
         public int Logout = 11;
+
+        public int Exitcashier = 1;
+        public int Salesreturn = 2;
+        public int RetailGift = 3;
+        public int RetailRegister = 4;
+        public int RegisterPickup = 5;
+        public int RegisterQuery = 6;
+        public int CheckAndPay = 7;
+        public int ReturnCashier = 8;
+
         #endregion
     }
 

@@ -28,17 +28,21 @@ namespace posui
         {
             // 若要为此测试生成代码，请从快捷菜单中选择“为编码的 UI 测试生成代码”，然后选择菜单项之一。
 
-            this.UIMap.Firstlogin();
-
+            UIMap.Firstlogin();
+            UIMap.OnDuty();
+            UIMap.ExitCashier();
         }
         [TestMethod]
         public void PosCashier()
         {
             // 若要为此测试生成代码，请从快捷菜单中选择“为编码的 UI 测试生成代码”，然后选择菜单项之一。
-            this.UIMap.Login();
-            this.UIMap.OnDuty(0);
-           // this.UIMap.SelectCashier();
-            
+            UIMap.Login();
+
+            UIMap.MainMenoSelect(UIMap.loginParams.Cashier);
+            UIMap.ExitCashier();
+            //  this.UIMap.shift();
+            UIMap.MainMenoSelect(UIMap.loginParams.Logout);
+          
         }
 
         //[TestMethod] 

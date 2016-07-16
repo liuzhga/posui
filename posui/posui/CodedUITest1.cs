@@ -31,6 +31,7 @@ namespace posui
             UIMap.Firstlogin();
             UIMap.OnDuty();
             UIMap.ExitCashier();
+            UIMap.MainMenoSelect(UIMap.loginParams.Logout);
         }
         [TestMethod]
         public void PosCashier()

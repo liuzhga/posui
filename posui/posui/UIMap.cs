@@ -30,7 +30,19 @@
         }
         private loginParams mloginParams;
 
+        /// <summary>
+        /// 在收银界面退出
+        /// </summary>
+        public void ExitCashier()
+        {
+            #region Variable Declarations
+            WinEdit uIItemEdit = this.UI畅捷通T零售POS软件Window.UIItem1234567890123Window.UIItemEdit;
+            #endregion
 
+            // 在 文本框 中键入“{Escape}”
+            Keyboard.SendKeys(uIItemEdit, this.loginParams.SendEsc, ModifierKeys.None);
+            ExitCashierMenoSelect(loginParams.Exitcashier);
+        }
         public void ExitCashierMenoSelect(int oper)
         {
             #region Variable Declarations
@@ -130,12 +142,17 @@
                 case 11:
                     WinEdit logout = this.UI主菜单选择Window.主菜单选择.退出系统;
                     Keyboard.SendKeys(logout, loginParams.SendZero, ModifierKeys.None);
-                    WinClient uI确定当班提示信息Client = this.UI提示信息Window.UI提示信息窗口有后续流程Client;
-                    Keyboard.SendKeys(uI确定当班提示信息Client, this.loginParams.SendEnter, ModifierKeys.None);
                     break;
             }
-
         }
+
+        public void PosLogout()
+        {
+            WinClient uI确定当班提示信息Client = this.UI提示信息Window.UI提示信息窗口有后续流程Client;
+            MainMenoSelect(loginParams.Logout);
+            Keyboard.SendKeys(uI确定当班提示信息Client, this.loginParams.SendEnter, ModifierKeys.None);
+        }
+
         /// <summary>
         /// 登录
         /// </summary>
@@ -272,21 +289,6 @@
 
             // 在 “提示信息” 客户端 中键入“{F2}”
             Keyboard.SendKeys(uI确定当班提示信息Client, this.loginParams.SendF3, ModifierKeys.None);
-        }
-
-
-        /// <summary>
-        /// 在收银界面退出
-        /// </summary>
-        public void ExitCashier()
-        {
-            #region Variable Declarations
-            WinEdit uIItemEdit = this.UI畅捷通T零售POS软件Window.UIItem1234567890123Window.UIItemEdit;
-            #endregion
-
-            // 在 文本框 中键入“{Escape}”
-            Keyboard.SendKeys(uIItemEdit, this.loginParams.SendEsc, ModifierKeys.None);
-            ExitCashierMenoSelect(loginParams.Exitcashier);
         }
 
     }

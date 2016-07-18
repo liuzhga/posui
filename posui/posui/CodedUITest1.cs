@@ -33,6 +33,7 @@ namespace posui
             UIMap.ExitCashier();
             UIMap.MainMenoSelect(UIMap.loginParams.Logout);
         }
+
         [TestMethod]
         public void PosCashier()
         {
@@ -40,19 +41,23 @@ namespace posui
             UIMap.Login();
 
             UIMap.MainMenoSelect(UIMap.loginParams.Cashier);
+            UIMap.NormalRetail();
             UIMap.ExitCashier();
-            //  this.UIMap.shift();
+            
+            this.UIMap.shift();
+            //交班后位于登录窗口，这里需要加一个退出，或者登录的函数操作
             UIMap.PosLogout();
         }
 
-        //[TestMethod] 
-        ////方法前添加该标志，重新生成解决方案，在左侧会显示标志下的测试名称。每个测试是独立的，如要执行当班，则需要执行登录
-        //public void OnDutytest()
-        //{
-        //    // 若要为此测试生成代码，请从快捷菜单中选择“为编码的 UI 测试生成代码”，然后选择菜单项之一。
-        //    //this.UIMap.Login(); 
-        //    this.UIMap.OnDuty();
-        //}
+        [TestMethod]
+        //方法前添加该标志，重新生成解决方案，在左侧会显示标志下的测试名称。每个测试是独立的，如要执行当班，则需要执行登录
+        public void OnDutytest()
+        {
+            // 若要为此测试生成代码，请从快捷菜单中选择“为编码的 UI 测试生成代码”，然后选择菜单项之一。
+        
+
+
+        }
 
         #region 附加测试特性
 

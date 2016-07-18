@@ -52,7 +52,7 @@
             {
                 case 1:
                     WinEdit exitcashiere = this.UI收银界面esc菜单选择Window.UINoneClient.退出收银;
-                    Keyboard.SendKeys(exitcashiere, this.loginParams.SendEnter, ModifierKeys.None);
+                    Keyboard.SendKeys(exitcashiere, this.loginParams.SendOne, ModifierKeys.None);
                     break;
                 case 2:
                     WinEdit salesreturn = this.UI收银界面esc菜单选择Window.UINoneClient.退货;
@@ -92,7 +92,7 @@
         public void MainMenoSelect(int oper)
         {
             #region Variable Declarations
-            
+
             #endregion
 
             // 在 “提示信息” 客户端 中键入“{Enter}”
@@ -109,7 +109,7 @@
                     break;
                 case 3:
                     WinEdit shift = this.UI主菜单选择Window.主菜单选择.交班;
-                    Keyboard.SendKeys(shift, this.loginParams.SendEnter, ModifierKeys.None);
+                    Keyboard.SendKeys(shift, this.loginParams.SendThree, ModifierKeys.None);
                     break;
                 case 4:
                     WinEdit cashierPractice = this.UI主菜单选择Window.主菜单选择.练习收银;
@@ -210,7 +210,7 @@
 
 
         /// <summary>
-        /// chushihua - 使用“chushihuaParams”将参数传递到此方法中。
+        /// 初始化
         /// </summary>
         public void Firstlogin()
         {
@@ -273,7 +273,7 @@
         }
 
         /// <summary>
-        /// shift - 使用“shiftParams”将参数传递到此方法中。
+        /// 交班
         /// </summary>
         public void shift()
         {
@@ -284,13 +284,59 @@
 
             // 选择交班菜单。
             MainMenoSelect(loginParams.Shift);
+            System.Threading.Thread.CurrentThread.Join(1000);
             // 在 文本框 中键入“{F2}”
             Keyboard.SendKeys(uIItemEdit, this.loginParams.SendF2, ModifierKeys.None);
+            System.Threading.Thread.CurrentThread.Join(1000);
 
             // 在 “提示信息” 客户端 中键入“{F2}”
-            Keyboard.SendKeys(uI确定当班提示信息Client, this.loginParams.SendF3, ModifierKeys.None);
+            Keyboard.SendKeys(uI确定当班提示信息Client, this.loginParams.SendF2, ModifierKeys.None);
         }
 
+
+        /// <summary>
+        /// 普通收银
+        /// </summary>
+        public void NormalRetail()
+        {
+            #region Variable Declarations
+            WinEdit uIItemEdit = this.UI畅捷通T零售POS软件Window.UIItem1234567890123Window.UIItemEdit;
+            WinEdit uIItemEdit1 = this.UI请输入新数量Window.UIItemWindow.UIItemEdit;
+            WinEdit uIItemEdit2 = this.UI现金结算Window.UIItemWindow.UIItemEdit;
+
+            WinText uI输入Text = this.UI畅捷通T零售POS软件Window.UI输入Window.UI输入Text;
+            WinControl uIP_1Image = this.UI畅捷通T零售POS软件Window.UINoneClient.UIP_1Image;
+            #endregion
+
+            System.Threading.Thread.CurrentThread.Join(10000);
+           // System.Threading.Thread.Sleep(10000);
+            // 单击 “p_1” 图像
+           // Mouse.Click(uIP_1Image, new Point(907, 15));
+            // 单击 文本框
+            Mouse.Click(uIItemEdit, new Point(27, 10));
+           // Assert.AreEqual(this.AssertMethod2ExpectedValues.UI输入TextName, uI输入Text.Name);
+            // 在 文本框 中键入“a01”
+            uIItemEdit.Text = this.loginParams.InventoryCode;
+
+            // 在 文本框 中键入“{Enter}”
+            Keyboard.SendKeys(uIItemEdit, this.loginParams.SendEnter, ModifierKeys.None);
+
+            // 在 文本框 中键入“{Right}”
+            Keyboard.SendKeys(uIItemEdit, this.loginParams.RightKey, ModifierKeys.None);
+
+            //Keyboard.SendKeys(uIItemEdit, this.loginParams.SendFive, ModifierKeys.None);
+            // 在 文本框 中键入“5.”
+           uIItemEdit1.Text = this.loginParams.SendFive;
+
+            // 在 文本框 中键入“{Enter}”
+            Keyboard.SendKeys(uIItemEdit1, this.loginParams.SendEnter, ModifierKeys.None);
+
+            // 在 文本框 中键入“{Enter}”
+            Keyboard.SendKeys(uIItemEdit, this.loginParams.SendEnter, ModifierKeys.None);
+
+            // 在 文本框 中键入“{Enter}”
+            Keyboard.SendKeys(uIItemEdit2, this.loginParams.SendEnter, ModifierKeys.None);
+        }
     }
     /// <summary>
     /// 参数表
@@ -314,8 +360,10 @@
         public string ServerPort = "8080";
         public string PosCode = "a010001";
 
-        public string SendOne = "1";
         public string SendZero = "0";
+        public string SendOne = "1";
+        public string SendThree = "3";
+        public string SendFive = "5.5";
         public string SendEnter = "{Enter}";
         public string SendTab = "{Tab}";
         public string SendEsc = "{Escape}";
@@ -343,6 +391,10 @@
         public int RegisterQuery = 6;
         public int CheckAndPay = 7;
         public int ReturnCashier = 8;
+
+
+        public string InventoryCode = "a01";
+        public string RightKey = "{Right}";
 
         #endregion
     }

@@ -137,6 +137,30 @@ namespace posui
                 return this.mUI收银界面esc菜单选择Window;
             }
         }
+        
+        public UI请输入新数量Window UI请输入新数量Window
+        {
+            get
+            {
+                if ((this.mUI请输入新数量Window == null))
+                {
+                    this.mUI请输入新数量Window = new UI请输入新数量Window();
+                }
+                return this.mUI请输入新数量Window;
+            }
+        }
+        
+        public UI现金结算Window UI现金结算Window
+        {
+            get
+            {
+                if ((this.mUI现金结算Window == null))
+                {
+                    this.mUI现金结算Window = new UI现金结算Window();
+                }
+                return this.mUI现金结算Window;
+            }
+        }
         #endregion
         
         #region Fields
@@ -157,6 +181,10 @@ namespace posui
         private UI交班Window mUI交班Window;
         
         private UI收银界面esc菜单选择Window mUI收银界面esc菜单选择Window;
+        
+        private UI请输入新数量Window mUI请输入新数量Window;
+        
+        private UI现金结算Window mUI现金结算Window;
         #endregion
     }
     
@@ -875,6 +903,30 @@ namespace posui
                 return this.mUIItem1234567890123Window;
             }
         }
+        
+        public UINoneClient UINoneClient
+        {
+            get
+            {
+                if ((this.mUINoneClient == null))
+                {
+                    this.mUINoneClient = new UINoneClient(this);
+                }
+                return this.mUINoneClient;
+            }
+        }
+        
+        public UI输入Window UI输入Window
+        {
+            get
+            {
+                if ((this.mUI输入Window == null))
+                {
+                    this.mUI输入Window = new UI输入Window(this);
+                }
+                return this.mUI输入Window;
+            }
+        }
         #endregion
         
         #region Fields
@@ -883,6 +935,10 @@ namespace posui
         private UINoneWindow mUINoneWindow;
         
         private UIItem1234567890123Window mUIItem1234567890123Window;
+        
+        private UINoneClient mUINoneClient;
+        
+        private UI输入Window mUI输入Window;
         #endregion
     }
     
@@ -955,6 +1011,115 @@ namespace posui
         
         #region Fields
         private WinEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("编码的 UI 测试生成器", "14.0.23107.0")]
+    public class UINoneClient : WinClient
+    {
+        
+        public UINoneClient(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region 搜索条件
+            this.SearchProperties[WinControl.PropertyNames.Name] = "none";
+            this.WindowTitles.Add("畅捷通T+零售POS软件");
+            #endregion
+        }
+        
+        #region Properties
+        public WinControl UIP_1Image
+        {
+            get
+            {
+                if ((this.mUIP_1Image == null))
+                {
+                    this.mUIP_1Image = new WinControl(this);
+                    #region 搜索条件
+                    this.mUIP_1Image.SearchProperties[UITestControl.PropertyNames.Name] = "p_1";
+                    this.mUIP_1Image.SearchProperties[UITestControl.PropertyNames.ControlType] = "Image";
+                    this.mUIP_1Image.WindowTitles.Add("畅捷通T+零售POS软件");
+                    #endregion
+                }
+                return this.mUIP_1Image;
+            }
+        }
+        
+        public WinText 数量合计值
+        {
+            get
+            {
+                if ((this.m数量合计值 == null))
+                {
+                    this.m数量合计值 = new WinText(this);
+                    #region 搜索条件
+                    this.m数量合计值.SearchProperties[WinText.PropertyNames.Name] = "sum_qty";
+                    this.m数量合计值.WindowTitles.Add("畅捷通T+零售POS软件");
+                    #endregion
+                }
+                return this.m数量合计值;
+            }
+        }
+        
+        public WinText 数量合计
+        {
+            get
+            {
+                if ((this.m数量合计 == null))
+                {
+                    this.m数量合计 = new WinText(this);
+                    #region 搜索条件
+                    this.m数量合计.SearchProperties[WinText.PropertyNames.Name] = "sum_qty_t";
+                    this.m数量合计.WindowTitles.Add("畅捷通T+零售POS软件");
+                    #endregion
+                }
+                return this.m数量合计;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinControl mUIP_1Image;
+        
+        private WinText m数量合计值;
+        
+        private WinText m数量合计;
+        #endregion
+    }
+    
+    [GeneratedCode("编码的 UI 测试生成器", "14.0.23107.0")]
+    public class UI输入Window : WinWindow
+    {
+        
+        public UI输入Window(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region 搜索条件
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "1025";
+            this.WindowTitles.Add("畅捷通T+零售POS软件");
+            #endregion
+        }
+        
+        #region Properties
+        public WinText UI输入Text
+        {
+            get
+            {
+                if ((this.mUI输入Text == null))
+                {
+                    this.mUI输入Text = new WinText(this);
+                    #region 搜索条件
+                    this.mUI输入Text.SearchProperties[WinText.PropertyNames.Name] = "输入：";
+                    this.mUI输入Text.WindowTitles.Add("畅捷通T+零售POS软件");
+                    #endregion
+                }
+                return this.mUI输入Text;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinText mUI输入Text;
         #endregion
     }
     
@@ -1418,13 +1583,13 @@ namespace posui
         }
         
         #region Properties
-        public UINoneClient UINoneClient
+        public UINoneClient1 UINoneClient
         {
             get
             {
                 if ((this.mUINoneClient == null))
                 {
-                    this.mUINoneClient = new UINoneClient(this);
+                    this.mUINoneClient = new UINoneClient1(this);
                 }
                 return this.mUINoneClient;
             }
@@ -1432,15 +1597,15 @@ namespace posui
         #endregion
         
         #region Fields
-        private UINoneClient mUINoneClient;
+        private UINoneClient1 mUINoneClient;
         #endregion
     }
     
     [GeneratedCode("编码的 UI 测试生成器", "14.0.23107.0")]
-    public class UINoneClient : WinClient
+    public class UINoneClient1 : WinClient
     {
         
-        public UINoneClient(UITestControl searchLimitContainer) : 
+        public UINoneClient1(UITestControl searchLimitContainer) : 
                 base(searchLimitContainer)
         {
             #region 搜索条件
@@ -1602,6 +1767,140 @@ namespace posui
         private WinEdit m对账交款;
         
         private WinEdit m返回;
+        #endregion
+    }
+    
+    [GeneratedCode("编码的 UI 测试生成器", "14.0.23107.0")]
+    public class UI请输入新数量Window : WinWindow
+    {
+        
+        public UI请输入新数量Window()
+        {
+            #region 搜索条件
+            this.SearchProperties[WinWindow.PropertyNames.Name] = "请输入新数量";
+            this.SearchProperties[WinWindow.PropertyNames.ClassName] = "FNWNS3125";
+            this.WindowTitles.Add("请输入新数量");
+            #endregion
+        }
+        
+        #region Properties
+        public UIItemWindow6 UIItemWindow
+        {
+            get
+            {
+                if ((this.mUIItemWindow == null))
+                {
+                    this.mUIItemWindow = new UIItemWindow6(this);
+                }
+                return this.mUIItemWindow;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIItemWindow6 mUIItemWindow;
+        #endregion
+    }
+    
+    [GeneratedCode("编码的 UI 测试生成器", "14.0.23107.0")]
+    public class UIItemWindow6 : WinWindow
+    {
+        
+        public UIItemWindow6(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region 搜索条件
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "1002";
+            this.WindowTitles.Add("请输入新数量");
+            #endregion
+        }
+        
+        #region Properties
+        public WinEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WinEdit(this);
+                    #region 搜索条件
+                    this.mUIItemEdit.WindowTitles.Add("请输入新数量");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("编码的 UI 测试生成器", "14.0.23107.0")]
+    public class UI现金结算Window : WinWindow
+    {
+        
+        public UI现金结算Window()
+        {
+            #region 搜索条件
+            this.SearchProperties[WinWindow.PropertyNames.Name] = "[现金]结算";
+            this.SearchProperties[WinWindow.PropertyNames.ClassName] = "FNWNS3125";
+            this.WindowTitles.Add("[现金]结算");
+            #endregion
+        }
+        
+        #region Properties
+        public UIItemWindow7 UIItemWindow
+        {
+            get
+            {
+                if ((this.mUIItemWindow == null))
+                {
+                    this.mUIItemWindow = new UIItemWindow7(this);
+                }
+                return this.mUIItemWindow;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIItemWindow7 mUIItemWindow;
+        #endregion
+    }
+    
+    [GeneratedCode("编码的 UI 测试生成器", "14.0.23107.0")]
+    public class UIItemWindow7 : WinWindow
+    {
+        
+        public UIItemWindow7(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region 搜索条件
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "1009";
+            this.WindowTitles.Add("[现金]结算");
+            #endregion
+        }
+        
+        #region Properties
+        public WinEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WinEdit(this);
+                    #region 搜索条件
+                    this.mUIItemEdit.WindowTitles.Add("[现金]结算");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinEdit mUIItemEdit;
         #endregion
     }
 }

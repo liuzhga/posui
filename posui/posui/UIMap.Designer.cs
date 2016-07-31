@@ -29,7 +29,36 @@ namespace posui
     public partial class UIMap
     {
         
+        /// <summary>
+        /// RecordedMethod1 - 使用“RecordedMethod1Params”将参数传递到此方法中。
+        /// </summary>
+        public void RecordedMethod1()
+        {
+            #region Variable Declarations
+            WinClient uINoneClient = this.UI畅捷通T零售POS软件Window.UINoneWindow.UINoneClient;
+            WinEdit uIItemEdit = this.UI畅捷通T零售POS软件Window.UIItem1234567890123Window.UIItemEdit;
+            #endregion
+
+            // 单击 “none” 客户端
+            Mouse.Click(uINoneClient, new Point(902, 375));
+
+            // 在 文本框 中键入“Control + 1”
+            Keyboard.SendKeys(uIItemEdit, this.RecordedMethod1Params.UIItemEditSendKeys, ModifierKeys.Control);
+        }
+        
         #region Properties
+        public virtual RecordedMethod1Params RecordedMethod1Params
+        {
+            get
+            {
+                if ((this.mRecordedMethod1Params == null))
+                {
+                    this.mRecordedMethod1Params = new RecordedMethod1Params();
+                }
+                return this.mRecordedMethod1Params;
+            }
+        }
+        
         public UI主菜单选择Window UI主菜单选择Window
         {
             get
@@ -161,9 +190,23 @@ namespace posui
                 return this.mUI现金结算Window;
             }
         }
+        
+        public UI请刷会员卡Window UI请刷会员卡Window
+        {
+            get
+            {
+                if ((this.mUI请刷会员卡Window == null))
+                {
+                    this.mUI请刷会员卡Window = new UI请刷会员卡Window();
+                }
+                return this.mUI请刷会员卡Window;
+            }
+        }
         #endregion
         
         #region Fields
+        private RecordedMethod1Params mRecordedMethod1Params;
+        
         private UI主菜单选择Window mUI主菜单选择Window;
         
         private UI收银员登录Window mUI收银员登录Window;
@@ -185,6 +228,23 @@ namespace posui
         private UI请输入新数量Window mUI请输入新数量Window;
         
         private UI现金结算Window mUI现金结算Window;
+        
+        private UI请刷会员卡Window mUI请刷会员卡Window;
+        #endregion
+    }
+    
+    /// <summary>
+    /// 要传递到“RecordedMethod1”中的参数
+    /// </summary>
+    [GeneratedCode("编码的 UI 测试生成器", "14.0.23107.0")]
+    public class RecordedMethod1Params
+    {
+        
+        #region Fields
+        /// <summary>
+        /// 在 文本框 中键入“Control + 1”
+        /// </summary>
+        public string UIItemEditSendKeys = "1";
         #endregion
     }
     
@@ -1892,6 +1952,73 @@ namespace posui
                     this.mUIItemEdit = new WinEdit(this);
                     #region 搜索条件
                     this.mUIItemEdit.WindowTitles.Add("[现金]结算");
+                    #endregion
+                }
+                return this.mUIItemEdit;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinEdit mUIItemEdit;
+        #endregion
+    }
+    
+    [GeneratedCode("编码的 UI 测试生成器", "14.0.23107.0")]
+    public class UI请刷会员卡Window : WinWindow
+    {
+        
+        public UI请刷会员卡Window()
+        {
+            #region 搜索条件
+            this.SearchProperties[WinWindow.PropertyNames.Name] = "请刷会员卡";
+            this.SearchProperties[WinWindow.PropertyNames.ClassName] = "FNWNS3125";
+            this.WindowTitles.Add("请刷会员卡");
+            #endregion
+        }
+        
+        #region Properties
+        public UIItemWindow8 UIItemWindow
+        {
+            get
+            {
+                if ((this.mUIItemWindow == null))
+                {
+                    this.mUIItemWindow = new UIItemWindow8(this);
+                }
+                return this.mUIItemWindow;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIItemWindow8 mUIItemWindow;
+        #endregion
+    }
+    
+    [GeneratedCode("编码的 UI 测试生成器", "14.0.23107.0")]
+    public class UIItemWindow8 : WinWindow
+    {
+        
+        public UIItemWindow8(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region 搜索条件
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "1002";
+            this.WindowTitles.Add("请刷会员卡");
+            #endregion
+        }
+        
+        #region Properties
+        public WinEdit UIItemEdit
+        {
+            get
+            {
+                if ((this.mUIItemEdit == null))
+                {
+                    this.mUIItemEdit = new WinEdit(this);
+                    #region 搜索条件
+                    this.mUIItemEdit.WindowTitles.Add("请刷会员卡");
                     #endregion
                 }
                 return this.mUIItemEdit;

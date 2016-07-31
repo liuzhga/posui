@@ -6,3 +6,4 @@ C:\posuitest\posui\posui\bin\Debug\posui.dll
 C:\posuitest\posui\posui\bin\Debug\posui.pdb
 C:\posuitest\posui\posui\obj\Debug\posui.dll
 C:\posuitest\posui\posui\obj\Debug\posui.pdb
+C:\posuitest\posui\posui\obj\Debug\posui.csprojResolveAssemblyReference.cache

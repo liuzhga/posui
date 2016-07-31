@@ -102,46 +102,57 @@
                 case 1:
                     WinEdit cashiere = this.UI主菜单选择Window.主菜单选择.前台收银;
                     Keyboard.SendKeys(cashiere, this.loginParams.SendEnter, ModifierKeys.None);
+                    System.Threading.Thread.CurrentThread.Join(2000);
                     break;
                 case 2:
                     WinEdit onduty = this.UI主菜单选择Window.主菜单选择.当班;
                     Keyboard.SendKeys(onduty, this.loginParams.SendEnter, ModifierKeys.None);
+                    System.Threading.Thread.CurrentThread.Join(2000);
                     break;
                 case 3:
                     WinEdit shift = this.UI主菜单选择Window.主菜单选择.交班;
                     Keyboard.SendKeys(shift, this.loginParams.SendThree, ModifierKeys.None);
+                    System.Threading.Thread.CurrentThread.Join(2000);
                     break;
                 case 4:
                     WinEdit cashierPractice = this.UI主菜单选择Window.主菜单选择.练习收银;
                     Keyboard.SendKeys(cashierPractice, this.loginParams.SendEnter, ModifierKeys.None);
+                    System.Threading.Thread.CurrentThread.Join(2000);
                     break;
                 case 5:
                     WinEdit parameterSet = this.UI主菜单选择Window.主菜单选择.参数设置;
                     Keyboard.SendKeys(parameterSet, this.loginParams.SendEnter, ModifierKeys.None);
+                    System.Threading.Thread.CurrentThread.Join(2000);
                     break;
                 case 6:
                     WinEdit daily = this.UI主菜单选择Window.主菜单选择.日结;
                     Keyboard.SendKeys(daily, this.loginParams.SendEnter, ModifierKeys.None);
+                    System.Threading.Thread.CurrentThread.Join(2000);
                     break;
                 case 7:
                     WinEdit detailedQuery = this.UI主菜单选择Window.主菜单选择.明细查询;
                     Keyboard.SendKeys(detailedQuery, this.loginParams.SendEnter, ModifierKeys.None);
+                    System.Threading.Thread.CurrentThread.Join(2000);
                     break;
                 case 8:
                     WinEdit datasync = this.UI主菜单选择Window.主菜单选择.数据同步;
                     Keyboard.SendKeys(datasync, this.loginParams.SendEnter, ModifierKeys.None);
+                    System.Threading.Thread.CurrentThread.Join(2000);
                     break;
                 case 9:
                     WinEdit passwordChange = this.UI主菜单选择Window.主菜单选择.修改密码;
                     Keyboard.SendKeys(passwordChange, this.loginParams.SendEnter, ModifierKeys.None);
+                    System.Threading.Thread.CurrentThread.Join(2000);
                     break;
                 case 10:
                     WinEdit relogin = this.UI主菜单选择Window.主菜单选择.重新登录;
                     Keyboard.SendKeys(relogin, this.loginParams.SendEnter, ModifierKeys.None);
+                    System.Threading.Thread.CurrentThread.Join(2000);
                     break;
                 case 11:
                     WinEdit logout = this.UI主菜单选择Window.主菜单选择.退出系统;
                     Keyboard.SendKeys(logout, loginParams.SendZero, ModifierKeys.None);
+                    System.Threading.Thread.CurrentThread.Join(2000);
                     break;
             }
         }
@@ -151,6 +162,15 @@
             WinClient uI确定当班提示信息Client = this.UI提示信息Window.UI提示信息窗口有后续流程Client;
             MainMenoSelect(loginParams.Logout);
             Keyboard.SendKeys(uI确定当班提示信息Client, this.loginParams.SendEnter, ModifierKeys.None);
+        }
+
+        /// <summary>
+        /// 打开pos
+        /// </summary>
+        public void LaunchPos()
+        {
+            // 启动“%ProgramFiles%\Chanjet\Pos\ufida_t_pos_app.exe”
+             ApplicationUnderTest.Launch(this.loginParams.ExePath,this.loginParams.AlternateExePath);
         }
 
         /// <summary>
@@ -164,10 +184,6 @@
             WinEdit uIsecWinEdit = this.UI收银员登录Window.UI收银员登录子Window1.收银员密码;
 
             #endregion
-
-            // 启动“%ProgramFiles%\Chanjet\Pos\ufida_t_pos_app.exe”
-            ApplicationUnderTest ufida_t_pos_appApplication = ApplicationUnderTest.Launch(this.loginParams.ExePath,
-                this.loginParams.AlternateExePath);
 
             // 在 文本框 中键入“1”
             uIcodeEdit.Text = this.loginParams.SendOne;
@@ -275,7 +291,7 @@
         /// <summary>
         /// 交班
         /// </summary>
-        public void shift()
+        public void Shift()
         {
             #region Variable Declarations
             WinEdit uIItemEdit = this.UI交班Window.UIItemWindow.UIItemEdit;
@@ -295,49 +311,108 @@
 
 
         /// <summary>
+        /// 现金结算
+        /// </summary>
+        public void CashSettlement()
+        {
+            #region Variable Declarations
+            WinEdit uIItemEdit = this.UI畅捷通T零售POS软件Window.UIItem1234567890123Window.UIItemEdit;
+            WinEdit uIItemEdit2 = this.UI现金结算Window.UIItemWindow.UIItemEdit;
+
+            #endregion
+           
+            // 在 文本框 中键入“{Enter}”，回车，弹出现金结算界面
+            Keyboard.SendKeys(uIItemEdit, this.loginParams.SendEnter, ModifierKeys.None);
+
+            // 在 文本框 中键入“{Enter}”，现金结算对话框，录入回车完成结算
+            Keyboard.SendKeys(uIItemEdit2, this.loginParams.SendEnter, ModifierKeys.None);
+        }
+        /// <summary>
         /// 普通收银
         /// </summary>
-        public void NormalRetail()
+        public void NormalRetailTest()
         {
             #region Variable Declarations
             WinEdit uIItemEdit = this.UI畅捷通T零售POS软件Window.UIItem1234567890123Window.UIItemEdit;
             WinEdit uIItemEdit1 = this.UI请输入新数量Window.UIItemWindow.UIItemEdit;
             WinEdit uIItemEdit2 = this.UI现金结算Window.UIItemWindow.UIItemEdit;
 
-            WinText uI输入Text = this.UI畅捷通T零售POS软件Window.UI输入Window.UI输入Text;
-            WinControl uIP_1Image = this.UI畅捷通T零售POS软件Window.UINoneClient.UIP_1Image;
             #endregion
 
             System.Threading.Thread.CurrentThread.Join(10000);
-           // System.Threading.Thread.Sleep(10000);
-            // 单击 “p_1” 图像
-           // Mouse.Click(uIP_1Image, new Point(907, 15));
-            // 单击 文本框
-            Mouse.Click(uIItemEdit, new Point(27, 10));
-           // Assert.AreEqual(this.AssertMethod2ExpectedValues.UI输入TextName, uI输入Text.Name);
+            //录入会员卡号
+            InputMembershipCard(loginParams.SendOne);
             // 在 文本框 中键入“a01”
             uIItemEdit.Text = this.loginParams.InventoryCode;
 
-            // 在 文本框 中键入“{Enter}”
+            // 在 文本框 中键入“{Enter}”存货编码录入后回车确认
             Keyboard.SendKeys(uIItemEdit, this.loginParams.SendEnter, ModifierKeys.None);
 
-            // 在 文本框 中键入“{Right}”
+            // 在 文本框 中键入“{Right}”右方向键，修改数量
             Keyboard.SendKeys(uIItemEdit, this.loginParams.RightKey, ModifierKeys.None);
 
-            //Keyboard.SendKeys(uIItemEdit, this.loginParams.SendFive, ModifierKeys.None);
-            // 在 文本框 中键入“5.”
-           uIItemEdit1.Text = this.loginParams.SendFive;
+            // 在 文本框 中键入“5.”录入数量为5
+            uIItemEdit1.Text = this.loginParams.SendFive;
+
+            // 在 文本框 中键入“{Enter}”，回车确认，回到零售页面
+            Keyboard.SendKeys(uIItemEdit1, this.loginParams.SendEnter, ModifierKeys.None);
+
+            // 在 文本框 中键入“{Enter}”，回车，弹出现金结算界面
+            Keyboard.SendKeys(uIItemEdit, this.loginParams.SendEnter, ModifierKeys.None);
+
+            // 在 文本框 中键入“{Enter}”，现金结算对话框，录入回车完成结算
+            Keyboard.SendKeys(uIItemEdit2, this.loginParams.SendEnter, ModifierKeys.None);
+        }
+        /// <summary>
+        /// InputMembershipCard - 录入会员卡号。
+        /// </summary>
+        public void InputInventoryCode(string code)
+        {
+            #region Variable Declarations
+            WinEdit uIItemEdit = this.UI畅捷通T零售POS软件Window.UIItem1234567890123Window.UIItemEdit;
+            WinEdit uIItemEdit1 = this.UI请输入新数量Window.UIItemWindow.UIItemEdit;
+            #endregion
+
+            // 在 文本框 中键入“a01”
+            uIItemEdit.Text = this.loginParams.InventoryCode;
+
+            // 在 文本框 中键入“{Enter}”存货编码录入后回车确认
+            Keyboard.SendKeys(uIItemEdit, this.loginParams.SendEnter, ModifierKeys.None);
+
+            // 在 文本框 中键入“{Right}”右方向键，修改数量
+            Keyboard.SendKeys(uIItemEdit, this.loginParams.RightKey, ModifierKeys.None);
+
+            // 在 文本框 中键入“5.”录入数量为5
+            uIItemEdit1.Text = this.loginParams.SendFive;
+
+            // 在 文本框 中键入“{Enter}”，回车确认，回到零售页面
+            Keyboard.SendKeys(uIItemEdit1, this.loginParams.SendEnter, ModifierKeys.None);
+        }
+        /// <summary>
+        /// InputMembershipCard - 录入会员卡号。
+        /// </summary>
+        public void InputMembershipCard( string code )
+        {
+            #region Variable Declarations
+            WinEdit uIItemEdit = this.UI畅捷通T零售POS软件Window.UIItem1234567890123Window.UIItemEdit;
+            WinEdit uIItemEdit1 = this.UI请刷会员卡Window.UIItemWindow.UIItemEdit;
+            #endregion
+
+
+            // 在 文本框 中键入“{F2}”
+            Keyboard.SendKeys(uIItemEdit, this.loginParams.SendF2, ModifierKeys.None);
+
+            // 在 文本框 中键入“1”
+            uIItemEdit1.Text = code;
 
             // 在 文本框 中键入“{Enter}”
             Keyboard.SendKeys(uIItemEdit1, this.loginParams.SendEnter, ModifierKeys.None);
-
-            // 在 文本框 中键入“{Enter}”
-            Keyboard.SendKeys(uIItemEdit, this.loginParams.SendEnter, ModifierKeys.None);
-
-            // 在 文本框 中键入“{Enter}”
-            Keyboard.SendKeys(uIItemEdit2, this.loginParams.SendEnter, ModifierKeys.None);
         }
+
     }
+
+
+
     /// <summary>
     /// 参数表
     /// </summary>
@@ -367,8 +442,18 @@
         public string SendEnter = "{Enter}";
         public string SendTab = "{Tab}";
         public string SendEsc = "{Escape}";
-        public string SendF3 = "{F3}";
+
         public string SendF2 = "{F2}";
+        public string SendF3 = "{F3}";
+        public string SendF4 = "{F4}";
+        public string SendF5 = "{F5}";
+        public string SendF6 = "{F6}";
+        public string SendF7 = "{F7}";
+        public string SendF8 = "{F8}";
+        public string SendF9 = "{F9}";
+        public string SendF10 = "{F10}";
+        public string SendF11 = "{F11}";
+        public string SendF12 = "{F12}";
 
 
         public int Cashier = 1;

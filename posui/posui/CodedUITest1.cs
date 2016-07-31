@@ -38,14 +38,41 @@ namespace posui
         public void PosCashier()
         {
             // 若要为此测试生成代码，请从快捷菜单中选择“为编码的 UI 测试生成代码”，然后选择菜单项之一。
+            UIMap.LaunchPos();
             UIMap.Login();
 
             UIMap.MainMenoSelect(UIMap.loginParams.Cashier);
-            UIMap.NormalRetail();
+            //存货编码录入
+            UIMap.InputInventoryCode(UIMap.loginParams.InventoryCode);
+            //使用现金结算
+            UIMap.CashSettlement();
+            //退出收银界面
             UIMap.ExitCashier();
-            
-            this.UIMap.shift();
-            //交班后位于登录窗口，这里需要加一个退出，或者登录的函数操作
+            //交班
+            this.UIMap.Shift();
+            //退出pos
+            UIMap.Login();
+            UIMap.PosLogout();
+        }
+        [TestMethod]
+        public void PosCashierTestAllKey()
+        {
+            UIMap.LaunchPos();
+            UIMap.Login();
+            //录入会员卡号
+            UIMap.InputMembershipCard(UIMap.loginParams.SendOne);
+
+            UIMap.MainMenoSelect(UIMap.loginParams.Cashier);
+            //存货编码录入
+            UIMap.InputInventoryCode(UIMap.loginParams.InventoryCode);
+            //使用现金结算
+            UIMap.CashSettlement();
+            //退出收银界面
+            UIMap.ExitCashier();
+            //交班
+            this.UIMap.Shift();
+            //退出pos
+            UIMap.Login();
             UIMap.PosLogout();
         }
 
@@ -54,7 +81,10 @@ namespace posui
         public void OnDutytest()
         {
             // 若要为此测试生成代码，请从快捷菜单中选择“为编码的 UI 测试生成代码”，然后选择菜单项之一。
-        
+            this.UIMap.RecordedMethod1();
+            this.UIMap.InputMembershipCard(UIMap.loginParams.SendOne);
+
+
 
 
         }
